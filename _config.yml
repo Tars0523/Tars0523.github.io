@@ -10,14 +10,14 @@ lang: ko
 timezone: Asia/Seoul
 
 # Basic metadata
-title: gamgam
-tagline: Robotics
+title: Jiwoo Kim
+tagline: FAIR Lab @ KAIST
 description: >-
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Ph.D. student at FAIR Lab @ KAIST writing about robotics, optimization, and reliable perception.
 
 # IMPORTANT: User site URL (NOT the repo URL)
 # e.g., https://username.github.io  (no trailing slash)
-url: "https://Tars0523.github.io"
+url: "https://tars0523.github.io"
 # For user site, keep baseurl empty
 baseurl: ""
 
@@ -74,7 +74,7 @@ pageviews:
 # Color scheme (leave empty to follow system; toggle appears in UI)
 # theme_mode: light
 # theme_mode: dark
-theme_mode:
+theme_mode: light
 
 # CDN for media (optional)
 cdn:

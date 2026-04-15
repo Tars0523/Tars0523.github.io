@@ -1,4 +1,78 @@
 ---
-layout: home
-# Index page
+layout: page
+title: Jiwoo Kim
 ---
+
+<style>
+main h1:first-of-type {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+{% assign latest_post = site.posts | first %}
+
+<div class="landing-page">
+  <section class="landing-hero">
+    <p class="landing-badge">FAIR Lab @ KAIST</p>
+    <h1>Jiwoo Kim</h1>
+    <p class="landing-subtitle">Ph.D. Student in robotics, optimization, and reliable perception.</p>
+    <p class="landing-description">
+      KAIST FAIR Lab에서 박사과정 중인 Jiwoo Kim입니다. 로보틱스와 AI를 바탕으로,
+      현실 세계의 불확실성을 더 잘 다루는 perception과 estimation 문제를 탐구하고 있습니다.
+    </p>
+
+    <div class="landing-actions">
+      <a class="landing-button landing-button-primary" href="{{ '/about/' | relative_url }}">About Me</a>
+      <a class="landing-button landing-button-secondary" href="{{ '/archives/' | relative_url }}">Writing</a>
+      <a class="landing-button landing-button-ghost" href="https://github.com/Tars0523">GitHub</a>
+    </div>
+  </section>
+
+  <section class="landing-grid">
+    <article class="landing-card">
+      <p class="landing-section-label">Current Role</p>
+      <h2>Ph.D. Student at FAIR Lab @ KAIST</h2>
+      <p>
+        수학적으로 단단한 기초 위에서, 로보틱스 시스템이 복잡한 환경에서도 안정적으로 동작하도록 만드는
+        문제에 관심이 있습니다.
+      </p>
+    </article>
+
+    <article class="landing-card">
+      <p class="landing-section-label">Research Themes</p>
+      <ul class="landing-list">
+        <li>Robotics and embodied intelligence</li>
+        <li>Optimization and robust estimation</li>
+        <li>Reliable perception in noisy environments</li>
+      </ul>
+    </article>
+
+    <article class="landing-card">
+      <p class="landing-section-label">What You Will Find Here</p>
+      <ul class="landing-list">
+        <li>읽고 있는 논문과 개념 정리</li>
+        <li>연구 과정에서의 생각과 메모</li>
+        <li>로보틱스와 수학적 도구에 대한 기록</li>
+      </ul>
+    </article>
+  </section>
+
+  {% if latest_post %}
+    <section class="landing-card landing-feature-card">
+      <p class="landing-section-label">Latest Note</p>
+      <h2>
+        <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a>
+      </h2>
+      <p>{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 220 }}</p>
+      <a class="landing-inline-link" href="{{ latest_post.url | relative_url }}">Read the note</a>
+    </section>
+  {% endif %}
+</div>

@@ -6,10 +6,8 @@ title: Jiwoo Kim
 <style>
 main h1:first-of-type {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -19,60 +17,70 @@ main h1:first-of-type {
 
 {% assign latest_post = site.posts | first %}
 
-<div class="landing-page">
-  <section class="landing-hero">
-    <p class="landing-badge">FAIR Lab @ KAIST</p>
-    <h1>Jiwoo Kim</h1>
-    <p class="landing-subtitle">Ph.D. Student in robotics, optimization, and reliable perception.</p>
-    <p class="landing-description">
-      I am Jiwoo Kim, a Ph.D. student at FAIR Lab, KAIST. My work focuses on robotics and AI,
-      with an emphasis on perception and estimation under real-world uncertainty.
-    </p>
+<div class="lp">
 
-    <div class="landing-actions">
-      <a class="landing-button landing-button-primary" href="{{ '/about/' | relative_url }}">About Me</a>
-      <a class="landing-button landing-button-secondary" href="{{ '/archives/' | relative_url }}">Writing</a>
-      <a class="landing-button landing-button-ghost" href="https://github.com/Tars0523">GitHub</a>
+  <!-- system bar -->
+  <div class="lp-sys">
+    <span class="lp-sys-dot"></span>
+    <span>FAIR Lab @ KAIST</span>
+    <span style="color:var(--c-dim)">·</span>
+    <span>Seoul, KR</span>
+    <span style="color:var(--c-dim)">·</span>
+    <span>Robotics / Optimization / Perception</span>
+  </div>
+
+  <!-- hero -->
+  <section class="lp-hero">
+    <p class="lp-hero-label">// Ph.D. Researcher</p>
+    <h1 class="lp-hero-name">Jiwoo<br><em>Kim</em></h1>
+    <p class="lp-hero-role">Building reliable perception for intelligent systems.</p>
+
+    <div class="lp-tags">
+      <span class="lp-tag">Robust Estimation</span>
+      <span class="lp-tag">Optimization</span>
+      <span class="lp-tag">SLAM</span>
+      <span class="lp-tag">Robotics</span>
+      <span class="lp-tag">GNC</span>
+    </div>
+
+    <div class="lp-actions">
+      <a class="lp-btn lp-btn-primary" href="{{ '/about/' | relative_url }}">About</a>
+      <a class="lp-btn lp-btn-outline" href="{{ '/archives/' | relative_url }}">Writing</a>
+      <a class="lp-btn lp-btn-outline" href="https://github.com/Tars0523" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </div>
   </section>
 
-  <section class="landing-grid">
-    <article class="landing-card">
-      <p class="landing-section-label">Current Role</p>
-      <h2>Ph.D. Student at FAIR Lab @ KAIST</h2>
-      <p>
-        I am interested in building robotics systems that remain reliable in complex, uncertain
-        environments, grounded in strong mathematical foundations.
-      </p>
-    </article>
-
-    <article class="landing-card">
-      <p class="landing-section-label">Research Themes</p>
-      <ul class="landing-list">
-        <li>Robotics and embodied intelligence</li>
-        <li>Optimization and robust estimation</li>
-        <li>Reliable perception in noisy environments</li>
+  <!-- info grid -->
+  <div class="lp-grid">
+    <article class="lp-card">
+      <p class="lp-card-label">Research Interests</p>
+      <ul class="lp-list">
+        <li>Robust estimation &amp; outlier rejection</li>
+        <li>Graduated Non-Convexity (GNC)</li>
+        <li>SLAM and spatial perception</li>
+        <li>Optimization under uncertainty</li>
       </ul>
     </article>
 
-    <article class="landing-card">
-      <p class="landing-section-label">What You Will Find Here</p>
-      <ul class="landing-list">
-        <li>Notes on papers and core concepts I am studying</li>
-        <li>Research thoughts, experiments, and working memos</li>
-        <li>Writing on robotics and mathematical tools</li>
+    <article class="lp-card">
+      <p class="lp-card-label">This Site</p>
+      <ul class="lp-list">
+        <li>논문 리뷰 &amp; 수식 유도</li>
+        <li>연구 메모 &amp; 아이디어</li>
+        <li>수학적 개념 정리</li>
+        <li>Posts written in Korean</li>
       </ul>
     </article>
-  </section>
+  </div>
 
+  <!-- latest post -->
   {% if latest_post %}
-    <section class="landing-card landing-feature-card">
-      <p class="landing-section-label">Latest Note</p>
-      <h2>
-        <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a>
-      </h2>
-      <p>{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 220 }}</p>
-      <a class="landing-inline-link" href="{{ latest_post.url | relative_url }}">Read the note</a>
-    </section>
+  <section class="lp-feature">
+    <p class="lp-feature-label">latest_post.md</p>
+    <h2><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h2>
+    <p>{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 260 }}</p>
+    <a class="lp-readmore" href="{{ latest_post.url | relative_url }}">read note →</a>
+  </section>
   {% endif %}
+
 </div>

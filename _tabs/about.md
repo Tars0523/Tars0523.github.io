@@ -1,42 +1,38 @@
 ---
-icon: fas fa-info-circle
+icon: fas fa-user
 order: 4
 ---
 
-<div class="about-intro">
-  <p class="landing-section-label">Profile</p>
+<div class="about-header">
+  <p class="about-header-label">// about</p>
   <h2>Jiwoo Kim</h2>
   <p>
-    I am a Ph.D. student at FAIR Lab, KAIST. My interests center on robotics, optimization,
-    robust estimation, and reliable perception for intelligent systems that can operate
-    more dependably in the real world.
+    Ph.D. student at FAIR Lab, KAIST. I work on making robots perceive and reason reliably
+    in the real world — through robust estimation, optimization, and spatial perception.
+    The core question I keep coming back to: how do we build systems that stay trustworthy
+    when reality refuses to follow the model?
   </p>
 </div>
 
-<div class="about-grid">
-  <section class="about-card">
-    <h3>Affiliation</h3>
-    <p>FAIR Lab @ KAIST</p>
-  </section>
-
-  <section class="about-card">
-    <h3>Current Stage</h3>
-    <p>Ph.D. Student</p>
-  </section>
-
-  <section class="about-card">
-    <h3>Interests</h3>
-    <p>Robotics, optimization, robust estimation, and reliable perception.</p>
-  </section>
+<div class="about-facts">
+  <div class="about-fact">
+    <div class="about-fact-key">Affiliation</div>
+    <div class="about-fact-val">FAIR Lab @ KAIST</div>
+  </div>
+  <div class="about-fact">
+    <div class="about-fact-key">Stage</div>
+    <div class="about-fact-val">Ph.D. Student</div>
+  </div>
+  <div class="about-fact">
+    <div class="about-fact-key">Location</div>
+    <div class="about-fact-val">Seoul, South Korea</div>
+  </div>
 </div>
 
 ## Research Direction
 
-I am interested in making robotics systems more reliable in complex and uncertain real-world
-environments. In particular, I enjoy exploring the connections between perception, estimation,
-and optimization.
+My work sits at the intersection of **robust estimation**, **optimization**, and **spatial perception** for robotic systems. I am especially interested in methods that remain correct even when a significant fraction of the sensor data is corrupted or misleading — outlier rejection, non-convex optimization, and the theory behind why some solvers succeed where others fail.
 
 ## Writing
 
-This site collects paper notes, mathematical ideas, and research reflections that I want to
-document carefully over time.
+Notes on papers I'm reading, mathematical derivations I'm working through, and ideas I want to document carefully. All posts are written in Korean.

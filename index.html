@@ -17,70 +17,73 @@ main h1:first-of-type {
 
 {% assign latest_post = site.posts | first %}
 
-<div class="lp">
+<div class="bj-page">
 
-  <!-- system bar -->
-  <div class="lp-sys">
-    <span class="lp-sys-dot"></span>
-    <span>FAIR Lab @ KAIST</span>
-    <span style="color:var(--c-dim)">·</span>
-    <span>Seoul, KR</span>
-    <span style="color:var(--c-dim)">·</span>
-    <span>Robotics / Optimization / Perception</span>
-  </div>
-
-  <!-- hero -->
-  <section class="lp-hero">
-    <p class="lp-hero-label">// Ph.D. Researcher</p>
-    <h1 class="lp-hero-name">Jiwoo<br><em>Kim</em></h1>
-    <p class="lp-hero-role">Building reliable perception for intelligent systems.</p>
-
-    <div class="lp-tags">
-      <span class="lp-tag">Robust Estimation</span>
-      <span class="lp-tag">Optimization</span>
-      <span class="lp-tag">SLAM</span>
-      <span class="lp-tag">Robotics</span>
-      <span class="lp-tag">GNC</span>
-    </div>
-
-    <div class="lp-actions">
-      <a class="lp-btn lp-btn-primary" href="{{ '/about/' | relative_url }}">About</a>
-      <a class="lp-btn lp-btn-outline" href="{{ '/archives/' | relative_url }}">Writing</a>
-      <a class="lp-btn lp-btn-outline" href="https://github.com/Tars0523" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  <!-- Hero banner -->
+  <section class="bj-hero">
+    <div class="bj-hero-inner">
+      <h1>Jiwoo Kim</h1>
+      <p class="bj-hero-sub">
+        Ph.D. Student &nbsp;·&nbsp; FAIR Lab @ KAIST<br>
+        Robotics &nbsp;·&nbsp; Optimization &nbsp;·&nbsp; Robust Perception
+      </p>
+      <div class="bj-hero-actions">
+        <a class="bj-btn bj-btn-white" href="{{ '/about/' | relative_url }}">About Me</a>
+        <a class="bj-btn bj-btn-ghost" href="{{ '/archives/' | relative_url }}">Browse Posts</a>
+        <a class="bj-btn bj-btn-ghost" href="https://github.com/Tars0523" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
     </div>
   </section>
 
-  <!-- info grid -->
-  <div class="lp-grid">
-    <article class="lp-card">
-      <p class="lp-card-label">Research Interests</p>
-      <ul class="lp-list">
+  <!-- Info cards -->
+  <p class="bj-section-title">About This Site</p>
+  <div class="bj-grid">
+
+    <article class="bj-card">
+      <div class="bj-card-icon"><i class="fas fa-robot"></i></div>
+      <h3>Research</h3>
+      <ul>
         <li>Robust estimation &amp; outlier rejection</li>
         <li>Graduated Non-Convexity (GNC)</li>
-        <li>SLAM and spatial perception</li>
+        <li>SLAM &amp; spatial perception</li>
         <li>Optimization under uncertainty</li>
       </ul>
     </article>
 
-    <article class="lp-card">
-      <p class="lp-card-label">This Site</p>
-      <ul class="lp-list">
-        <li>논문 리뷰 &amp; 수식 유도</li>
-        <li>연구 메모 &amp; 아이디어</li>
-        <li>수학적 개념 정리</li>
-        <li>Posts written in Korean</li>
-      </ul>
+    <article class="bj-card">
+      <div class="bj-card-icon"><i class="fas fa-pen-nib"></i></div>
+      <h3>Writing</h3>
+      <p>
+        논문 리뷰, 수식 유도, 연구 메모 등을 기록합니다.
+        수학과 로보틱스가 만나는 지점을 탐구합니다.
+      </p>
     </article>
+
+    <article class="bj-card">
+      <div class="bj-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h3>Affiliation</h3>
+      <p>
+        FAIR Lab<br>
+        Korea Advanced Institute of Science &amp; Technology<br>
+        Seoul, South Korea
+      </p>
+    </article>
+
   </div>
 
-  <!-- latest post -->
+  <!-- Latest post -->
   {% if latest_post %}
-  <section class="lp-feature">
-    <p class="lp-feature-label">latest_post.md</p>
+  <p class="bj-section-title">Latest Note</p>
+  <article class="bj-post">
+    <p class="bj-post-meta">
+      {{ latest_post.date | date: "%B %d, %Y" }}
+      &nbsp;·&nbsp;
+      {% for tag in latest_post.tags limit:2 %}{{ tag }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+    </p>
     <h2><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h2>
-    <p>{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 260 }}</p>
-    <a class="lp-readmore" href="{{ latest_post.url | relative_url }}">read note →</a>
-  </section>
+    <p>{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 280 }}</p>
+    <a class="bj-read-more" href="{{ latest_post.url | relative_url }}">Read post &rarr;</a>
+  </article>
   {% endif %}
 
 </div>

@@ -74,7 +74,7 @@ pageviews:
 # Color scheme (leave empty to follow system; toggle appears in UI)
 # theme_mode: light
 # theme_mode: dark
-theme_mode: dark
+theme_mode: light
 
 # CDN for media (optional)
 cdn:

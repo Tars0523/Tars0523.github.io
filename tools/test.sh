@@ -14,6 +14,27 @@ _config="_config.yml"
 
 _baseurl=""
 
+require_ruby() {
+  if ! command -v ruby >/dev/null 2>&1; then
+    echo "Ruby is required. Install Ruby 3.1+ or use the devcontainer." >&2
+    exit 1
+  fi
+
+  if ! ruby -e 'required = Gem::Version.new("3.1.0"); exit(Gem::Version.new(RUBY_VERSION) >= required ? 0 : 1)'; then
+    current="$(ruby -e 'print RUBY_VERSION')"
+    echo "Ruby 3.1+ is required for this project (current: $current)." >&2
+    echo "Use the devcontainer or match the GitHub Actions runtime (Ruby 3.3)." >&2
+    exit 1
+  fi
+}
+
+require_bundle() {
+  if ! bundle check >/dev/null 2>&1; then
+    echo "Bundle dependencies are missing. Run 'bundle install' with Ruby 3.1+ first." >&2
+    exit 1
+  fi
+}
+
 help() {
   echo "Build and test the site content"
   echo
@@ -49,6 +70,9 @@ read_baseurl() {
 }
 
 main() {
+  require_ruby
+  require_bundle
+
   # clean up
   if [[ -d $SITE_DIR ]]; then
     rm -rf "$SITE_DIR"

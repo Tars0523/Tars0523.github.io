@@ -21,6 +21,8 @@ package-lock.json
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
+.codex
+_posts/gnc2.md
 
 # Misc
 _sass/vendors

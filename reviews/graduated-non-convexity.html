@@ -1,0 +1,24 @@
+---
+layout: research-home
+title: Graduated Non-Convexity
+permalink: /reviews/graduated-non-convexity/
+description: A three-part reading series on robust estimation, Black–Rangarajan duality, and graduated non-convexity.
+---
+<article class="detail review-detail">
+<a class="back-link" href="{{ '/#notes' | relative_url }}">← Paper &amp; Theory Reviews</a>
+<header class="detail-header"><p class="eyebrow">PAPER REVIEW / 3 PARTS</p><h1>Graduated Non-Convexity</h1><p class="lead" lang="ko">쉬운 문제에서 시작해, 이상치에 강건한 추정으로.</p><p class="review-byline">Review notes by Jiwoo Kim · 한국어</p></header>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/gnc-mesh-registration.png' | relative_url }}"><img src="{{ '/assets/img/papers/gnc-mesh-registration.png' | relative_url }}" alt="Figure 3 panels d, e, and f: mesh correspondences, successful GNC-TLS registration, and incorrect RANSAC registration" width="1560" height="345"></a><figcaption><span lang="ko"><strong>Fig. 3(d–f).</strong> 잘못된 대응점이 섞인 mesh registration: (d) 대응점, (e) GNC-TLS의 정합 결과, (f) RANSAC의 잘못된 정합 결과. 논문의 해당 실험 예시입니다.</span><a href="https://arxiv.org/abs/1909.08605">Source: Heng Yang et al., RA-L 2020</a></figcaption></figure>
+<div class="prose">
+<h2>읽고 있는 논문</h2>
+<p><a href="https://arxiv.org/abs/1909.08605"><em>Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection</em></a><br>Heng Yang, Pasquale Antonante, Vasileios Tzoumas, Luca Carlone<br>IEEE Robotics and Automation Letters (RA-L), 2020.</p>
+<p lang="ko">Robust cost가 도입하는 비볼록성을 어떻게 다룰 수 있을까요? 이 시리즈는 논문의 핵심인 Black–Rangarajan Duality와 GNC를 연결해, 측정값의 가중치를 갱신하면서 점진적으로 robust한 문제를 푸는 과정을 따라갑니다. GNC 자체가 모든 문제에서 전역 최적해를 보장하는 것은 아니라는 점도 함께 구분해 읽습니다.</p>
+<h2 id="series">시리즈 읽기</h2>
+</div>
+<ol class="review-chapters">
+{% assign series = site.posts | where_exp: 'post', 'post.series_order != nil' | sort: 'series_order' %}
+{% for post in series %}
+<li><a href="{{ post.url | relative_url }}"><span class="chapter-number">0{{ post.series_order }}</span><div><p class="eyebrow">PART {{ post.series_order }}</p><h2>{% case post.series_order %}{% when 1 %}Robust Estimation의 출발점{% when 2 %}Black–Rangarajan Duality{% when 3 %}GNC와 Continuation{% else %}{{ post.title }}{% endcase %}</h2><p>{{ post.description }}</p></div><span class="chapter-arrow" aria-hidden="true">↗</span></a></li>
+{% endfor %}
+</ol>
+<nav class="detail-next" aria-label="Review navigation"><a href="{{ '/#notes' | relative_url }}">← All reviews</a><a href="https://arxiv.org/pdf/1909.08605">Original paper PDF ↗</a></nav>
+</article>

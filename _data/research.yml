@@ -1,0 +1,15 @@
+- title: Geometric Perception
+  url: /research/geometric-perception/
+  image: /assets/img/covers/geometry.png
+  alt: Three-dimensional point cloud of a curved surface, colored by height
+  summary: Understanding 3D structure across sensing modalities for safe, scalable robotic perception.
+- title: Deep Learning
+  url: /research/deep-learning/
+  image: /assets/img/covers/learning.png
+  alt: A geometric manifold with a continuous color field representing a learned feature
+  summary: Exploring learned representations that connect sensor observations with underlying geometry.
+- title: Uncertainty Quantification
+  url: /research/uncertainty/
+  image: /assets/img/covers/uncertainty.png
+  alt: Confidence ellipses around a two-dimensional estimate with noisy observations
+  summary: Reasoning about what a perception system knows, and where its estimates remain uncertain.

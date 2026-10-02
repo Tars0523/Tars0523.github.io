@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="wordmark" href="{{ '/' | relative_url }}">Jiwoo Kim<span class="brand-dot" aria-hidden="true">.</span></a>
+  <nav aria-label="Main navigation">
+    <a href="{{ '/#research' | relative_url }}">Research</a>
+    <a href="{{ '/#notes' | relative_url }}">Reviews</a>
+    <a href="https://github.com/Tars0523">GitHub <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="main" class="wrap">{{ content }}</main>
+<footer class="site-footer wrap"><span>Jiwoo Kim · Robotics &amp; geometric perception</span><a href="{{ '/' | relative_url }}">Back to home <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

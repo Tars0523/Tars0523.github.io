@@ -1,0 +1,48 @@
+---
+layout: publication
+title: 'Doppler Correspondence: Non-Iterative Scan Matching With Doppler Velocity-Based Correspondence'
+permalink: /research/doppler-correspondence/
+venue: RSS 2025
+award: Outstanding Student Paper Award Finalist
+award_url: https://roboticsconference.org/2025/program/awards/
+description: Finding correspondences through motion, beyond spatial proximity.
+equal_contribution: true
+authors: 'Jiwoo Kim*, Geunsik Bae*, Changseung Kim, Jinwoo Lee, Woojae Shin, Hyondong Oh'
+paper_url: https://arxiv.org/abs/2502.11461
+pdf_url: https://www.roboticsproceedings.org/rss21/p005.pdf
+code_url: https://github.com/Tars0523/Doppler_Correspondence
+image: /assets/img/papers/doppler-map.png
+image_alt: 'Non-iterative scan matching map and trajectory on the NTU4DRadLM nyl sequence'
+image_width: 1760
+image_height: 1436
+caption: 'NTU4DRadLM의 nyl 시퀀스에서 얻은 지도와 궤적. / Map and trajectory from non-iterative scan matching on the nyl sequence.'
+figure_source: 'Kim et al., Fig. 2'
+next_url: /research/poli/
+next_title: Point Cloud Geometry · POLI
+---
+<section id="korean" lang="ko">
+<h2>한국어 요약</h2>
+<h3>문제: 가까운 점이 항상 같은 점일까?</h3>
+<p>ICP는 두 스캔에서 공간적으로 가까운 점을 연결하고, 자세를 갱신하며 이 과정을 반복합니다. 하지만 벽이나 터널처럼 구조가 반복되거나 점군이 희소하면, 거리만으로는 올바른 대응점을 구별하기 어렵습니다. 이 연구는 4D Radar와 FMCW LiDAR가 제공하는 <strong>Doppler 속도를 대응점 탐색에 직접 활용</strong>합니다.</p>
+<h3>핵심 아이디어</h3>
+<p>각 점의 거리 r과 방사 방향 속도 v, 스캔 간 시간 ΔT를 결합합니다. 정적 장면과 작은 회전이라는 근사 조건에서, 실제 대응점은 아래의 관계를 만족합니다. 왼쪽은 source 점, 오른쪽은 target 점에서 각각 계산할 수 있어, 3차원 최근접점 탐색을 <strong>1차원 값의 매칭</strong>으로 바꿀 수 있습니다.</p>
+<div class="paper-equation" aria-label="Doppler correspondence relation">r<sub>p</sub>² + r<sub>p</sub>v<sub>p</sub>ΔT ≈ r<sub>q</sub>² − r<sub>q</sub>v<sub>q</sub>ΔT</div>
+<p>대응점을 한 번 찾은 뒤 공간 거리와 Doppler 기준으로 이상치를 걸러내고, 남은 대응점으로 강체 변환을 추정합니다. 반복적으로 대응점을 다시 찾는 루프 없이 스캔을 정합하는 것이 핵심입니다.</p>
+<h3>결과와 적용 조건</h3>
+<p>희소·준밀집 4D Radar와 밀집 4D LiDAR 실험에서 계산 효율과 반복 구조 환경에서의 강건성을 확인합니다. 다만 모든 조건에서 가장 정확한 방법이라는 뜻은 아닙니다. 큰 회전, 긴 스캔 간격, 많은 동적 물체는 가정을 약화시켜 성능을 떨어뜨릴 수 있습니다. 논문은 Doppler 대응점을 기존 ICP와 결합하는 방식도 다룹니다.</p>
+</section>
+<section id="english" lang="en">
+<h2>English summary</h2>
+<h3>The problem</h3>
+<p>Spatial proximity can be ambiguous in sparse scans and repetitive scenes. Standard ICP repeatedly updates nearest-neighbor matches and the estimated pose. This work instead uses the radial velocity measured by 4D radar and FMCW LiDAR to establish correspondences.</p>
+<h3>The approach</h3>
+<p>Range, Doppler velocity, and the time between scans define a scalar correspondence relation. Under the static-scene and small-rotation assumptions, matching these values provides a one-dimensional alternative to searching for spatial neighbors. The method finds correspondences once, rejects outliers using spatial and Doppler thresholds, and estimates the rigid transformation.</p>
+<h3>Findings and scope</h3>
+<p>Experiments across sparse and semi-dense radar and dense LiDAR demonstrate computational savings and resilience to repetitive geometry. Accuracy depends on motion and scene conditions: larger rotations, longer scan intervals, and moving objects can undermine the assumptions. The paper also explores combining Doppler correspondences with iterative registration.</p>
+</section>
+<section id="figures">
+<h2>Inside the paper · 주요 Figure</h2>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/doppler-overview.png' | relative_url }}"><img src="{{ '/assets/img/papers/doppler-overview.png' | relative_url }}" alt="Figure 1 compares iterative closest-point updates with one-pass Doppler correspondence" loading="lazy"></a><figcaption><span lang="ko"><strong>Fig. 1 — 반복 정합에서 직접 대응으로.</strong> ICP의 반복적인 대응점 갱신과, Doppler 정보를 이용한 한 번의 대응점 추정을 비교합니다.</span><span lang="en">Iterative correspondence refinement in ICP versus direct Doppler-based matching.</span><a href="https://arxiv.org/html/2502.11461v1#S1.F1">Source: Kim et al., Fig. 1</a></figcaption></figure>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/doppler-geometry.png' | relative_url }}"><img src="{{ '/assets/img/papers/doppler-geometry.png' | relative_url }}" alt="Figure 3 illustrates corresponding points and radial and tangential velocity components" loading="lazy"></a><figcaption><span lang="ko"><strong>Fig. 3 — Doppler 관계의 기하학.</strong> 연속된 스캔의 대응점과 방사·접선 방향 속도 성분을 통해 대응 관계를 유도합니다.</span><span lang="en">The geometric derivation relates corresponding points through radial and tangential velocity components.</span><a href="https://arxiv.org/abs/2502.11461">Source: Kim et al., Fig. 3</a></figcaption></figure>
+</section>
+<p class="paper-source">요약 및 Figure 출처 / Summary and figures: <a href="https://arxiv.org/abs/2502.11461">Kim et al., Doppler Correspondence</a>, RSS 2025. Figures reproduced from the authors’ paper; original numbering retained. 그림을 클릭하면 원본 크기로 볼 수 있습니다.</p>

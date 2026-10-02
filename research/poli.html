@@ -1,0 +1,51 @@
+---
+layout: publication
+title: 'Learning Point Cloud Geometry as a Statistical Manifold: Theory and Practice'
+permalink: /research/poli/
+venue: RSS 2026
+description: 'POLI: learning the geometry behind sparse point clouds.'
+equal_contribution: true
+authors: 'Jinwoo Lee*, Jiwoo Kim*, Woojae Shin, Giseop Kim, Hyondong Oh'
+paper_url: https://arxiv.org/abs/2605.10456
+pdf_url: https://arxiv.org/pdf/2605.10456
+code_url: https://github.com/jinwoolee1230/POLI
+image: /assets/img/papers/poli-overview.png
+image_alt: 'Figure 1 compares raw points, PCA geometry, POLI geometry, and ground truth on HeLiPR'
+image_width: 1688
+image_height: 1066
+caption: 'HeLiPR에서 Raw / PCA / POLI / Ground Truth 기하 비교. / Geometry comparison on HeLiPR, visualized with 300 samples per distribution.'
+figure_source: 'Lee, Kim et al., Fig. 1'
+next_url: /research/doppler-correspondence/
+next_title: Doppler Correspondence
+---
+<section id="korean" lang="ko">
+<h2>한국어 요약</h2>
+<h3>문제: 관측된 점의 분포와 실제 기하는 다르다</h3>
+<p>LiDAR 점군은 희소하고 밀도가 불균일합니다. 같은 표면도 센서 해상도와 시점에 따라 다른 점 분포로 관측되므로, 주변 점의 통계만으로 기하를 추정하면 관측 특성에 민감해집니다. 이 연구는 점군 뒤에 있는 <strong>국소 표면 기하를 Gaussian 분포들의 statistical manifold</strong>로 모델링합니다.</p>
+<h3>이론에서 구현으로: Point-to-Ellipsoid</h3>
+<p>각 점에 연결된 Gaussian의 공분산은 국소 기하의 방향과 퍼짐을 표현합니다. 서로 다른 시점의 관측을 같은 underlying geometry와 연결하고, 상대 자세의 불확실성을 고려하는 확률 모델에서 학습 목적함수를 유도합니다.</p>
+<p><strong>POLI(Point-to-Ellipsoid)</strong>는 점군을 입력받아 점별 공분산을 예측하는 신경망입니다. 학습에는 대응점과 합리적으로 정확한 상대 자세 관측이 필요하지만, 조밀한 정답 점군이나 정확한 기하 라벨을 요구하지 않습니다. 예측한 Gaussian은 타원체로 해석할 수 있으며, 기존 파이프라인의 기하 추정이나 스캔 증강에 활용됩니다.</p>
+<h3>결과와 의미</h3>
+<p>물체 자세 추정, LiDAR odometry, 전역 정합에서 표현의 활용성을 평가합니다. 예를 들어 논문 Table IV의 HeLiPR DCC 실험에서 POLI 증강을 적용한 GLIM의 병진 APE는 56.94 m에서 35.61 m로 감소합니다. 이는 해당 실험 설정의 결과이며, 모든 환경에서 같은 개선을 보장하지는 않습니다.</p>
+<p>학습 분포 밖에서는 이득이 줄어들 수 있고, Gaussian 공분산만으로 곡률 같은 고차 표면 특성을 직접 표현하기는 어렵습니다. 핵심은 점을 단순히 늘리는 것보다, <strong>기하를 명시적으로 모델링하고 여러 인식 작업에서 재사용하는 것</strong>입니다.</p>
+</section>
+<section id="english" lang="en">
+<h2>English summary</h2>
+<h3>From samples to geometry</h3>
+<p>Sparse LiDAR measurements depend strongly on resolution and viewpoint. This work separates those observations from the surface they describe, modeling local geometry as a statistical manifold of Gaussian distributions.</p>
+<h3>The POLI estimator</h3>
+<p>Point-to-Ellipsoid predicts a covariance for each point. A probabilistic objective connects corresponding observations across views while accounting for imperfect relative poses. Training requires correspondences and reasonably accurate pose observations, but no dense geometry labels. The resulting ellipsoids can supply geometry to existing perception pipelines or support scan augmentation.</p>
+<h3>Evidence and limitations</h3>
+<p>Evaluation covers object pose estimation, LiDAR odometry, and global registration. In the HeLiPR DCC experiment reported in Table IV, POLI augmentation reduces GLIM translation APE from 56.94 m to 35.61 m. Gains vary across settings and can decrease under distribution shift. Covariances also provide a low-order local representation rather than directly encoding surface curvature.</p>
+</section>
+<section id="figures">
+<h2>Inside the paper · 주요 Figure</h2>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/poli-manifold.png' | relative_url }}"><img src="{{ '/assets/img/papers/poli-manifold.png' | relative_url }}" alt="Figure 2 shows a surface represented by local Gaussian distributions observed from two sensor frames" loading="lazy"></a><figcaption><span lang="ko"><strong>Fig. 2 — 기하를 분포로 표현하기.</strong> 서로 다른 좌표계의 관측점들을 같은 국소 기하 분포에서 나온 표본으로 연결합니다.</span><span lang="en">Observations in different sensor frames are related through a shared local geometric distribution.</span><a href="https://arxiv.org/abs/2605.10456">Source: Lee, Kim et al., Fig. 2</a></figcaption></figure>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/poli-network.png' | relative_url }}"><img src="{{ '/assets/img/papers/poli-network.png' | relative_url }}" alt="Figure 4 shows POLI's point-wise covariance estimator architecture" loading="lazy"></a><figcaption><span lang="ko"><strong>Fig. 4 — 점군에서 공분산으로.</strong> 네트워크가 예측한 lower-triangular 행렬 L로부터 C = LLᵀ 형태의 공분산을 구성합니다.</span><span lang="en">The estimator predicts lower-triangular factors and constructs point-wise covariances as C = LLᵀ.</span><a href="https://arxiv.org/abs/2605.10456">Source: Lee, Kim et al., Fig. 4</a></figcaption></figure>
+<figure class="paper-figure"><div class="paper-panels">
+<div><a href="{{ '/assets/img/papers/poli-raw.png' | relative_url }}"><img src="{{ '/assets/img/papers/poli-raw.png' | relative_url }}" alt="Figure 9a: original sparse point cloud" loading="lazy"></a><span class="paper-panel-label">(a) Raw point cloud</span></div>
+<div><a href="{{ '/assets/img/papers/poli-covariance.png' | relative_url }}"><img src="{{ '/assets/img/papers/poli-covariance.png' | relative_url }}" alt="Figure 9b: estimated Gaussian covariances" loading="lazy"></a><span class="paper-panel-label">(b) Predicted covariances</span></div>
+<div><a href="{{ '/assets/img/papers/poli-augmented.png' | relative_url }}"><img src="{{ '/assets/img/papers/poli-augmented.png' | relative_url }}" alt="Figure 9c: scan augmented by sampling from predicted Gaussians" loading="lazy"></a><span class="paper-panel-label">(c) Augmented scan</span></div>
+</div><figcaption><span lang="ko"><strong>Fig. 9 — 학습한 기하로 스캔 증강하기.</strong> 원본 점군에서 공분산을 추정하고, 예측 분포에서 샘플링하여 스캔을 증강합니다.</span><span lang="en">Scan augmentation proceeds from raw observations to estimated covariances and samples from the learned distributions.</span><a href="https://arxiv.org/abs/2605.10456">Source: Lee, Kim et al., Fig. 9(a–c)</a></figcaption></figure>
+</section>
+<p class="paper-source">요약 및 Figure 출처 / Summary and figures: <a href="https://arxiv.org/abs/2605.10456">Lee, Kim et al., Learning Point Cloud Geometry as a Statistical Manifold</a>, RSS 2026, arXiv v1. Figures reproduced from the authors’ paper; original numbering retained. 그림을 클릭하면 원본 크기로 볼 수 있습니다.</p>

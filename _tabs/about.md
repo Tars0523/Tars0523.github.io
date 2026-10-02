@@ -1,37 +1,26 @@
 ---
+layout: research-home
+title: About
 icon: fas fa-user
 order: 4
 ---
+<article class="detail">
+<header class="detail-header"><p class="eyebrow">ABOUT</p><h1>Jiwoo Kim<span class="brand-dot">.</span></h1><p class="lead">Ph.D. student · FAIR Lab, KAIST</p></header>
+<div class="prose" markdown="1">
 
-<div class="about-bj-hero">
-  <h2>Jiwoo Kim</h2>
-  <p>
-    Ph.D. student at FAIR Lab, KAIST. I work on making robots perceive and reason reliably
-    in the real world — through robust estimation, optimization, and spatial perception.
-    The core question I keep returning to: how do we build systems that remain trustworthy
-    when reality refuses to follow the model?
-  </p>
+I am interested in building safe and scalable **3D geometric perception systems for robotics**. My research interests center on sensor-agnostic geometric perception: understanding how perception algorithms can operate robustly across heterogeneous sensing modalities.
+
+## Research interests
+
+- [Geometric Perception]({{ '/research/geometric-perception/' | relative_url }})
+- [Deep Learning]({{ '/research/deep-learning/' | relative_url }})
+- [Uncertainty Quantification]({{ '/research/uncertainty/' | relative_url }})
+
+## Research notebook
+
+논문을 읽으며 이해한 내용과 수식 유도, 연구하면서 생긴 질문들을 한국어로 기록합니다. [Graduated Non-Convexity 시리즈]({{ '/reviews/graduated-non-convexity/' | relative_url }})에서는 robust estimation의 문제 설정부터 Black–Rangarajan Duality와 GNC 알고리즘까지 차근차근 살펴봅니다.
+
+[GitHub ↗](https://github.com/Tars0523)
+
 </div>
-
-<div class="about-bj-facts">
-  <div class="about-bj-fact">
-    <div class="about-bj-fact-key">Affiliation</div>
-    <div class="about-bj-fact-val">FAIR Lab @ KAIST</div>
-  </div>
-  <div class="about-bj-fact">
-    <div class="about-bj-fact-key">Stage</div>
-    <div class="about-bj-fact-val">Ph.D. Student</div>
-  </div>
-  <div class="about-bj-fact">
-    <div class="about-bj-fact-key">Location</div>
-    <div class="about-bj-fact-val">Seoul, South Korea</div>
-  </div>
-</div>
-
-## Research Direction
-
-My work sits at the intersection of **robust estimation**, **optimization**, and **spatial perception** for robotic systems. I am especially drawn to methods that remain correct even when a significant fraction of sensor data is corrupted — outlier rejection, non-convex optimization, and the theory behind why some solvers succeed where others fail.
-
-## Writing
-
-논문 리뷰, 수식 유도, 연구하면서 기록하고 싶은 아이디어들을 정리합니다. 모든 포스트는 한국어로 작성됩니다.
+</article>

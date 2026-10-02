@@ -1,0 +1,34 @@
+- title: 'Learning Point Cloud Geometry as a Statistical Manifold: Theory and Practice'
+  short_title: Learning Point Cloud Geometry as a Statistical Manifold
+  url: /research/poli/
+  venue: RSS 2026
+  image: /assets/img/papers/poli-overview.png
+  alt: 'Paper Figure 1: raw point cloud, PCA, POLI, and ground-truth geometry on HeLiPR'
+  summary: 'POLI learns a Gaussian ellipsoid for each point, connecting sparse observations to the geometry underneath.'
+  summary_ko: '희소한 점군에서 점별 Gaussian 기하를 학습하는 자기지도 추정기.'
+- title: 'Doppler Correspondence: Non-Iterative Scan Matching With Doppler Velocity-Based Correspondence'
+  short_title: Doppler Correspondence
+  url: /research/doppler-correspondence/
+  venue: RSS 2025
+  award: Outstanding Student Paper Award Finalist
+  award_url: https://roboticsconference.org/2025/program/awards/
+  image: /assets/img/papers/doppler-map.png
+  alt: 'Paper Figure 2: non-iterative scan matching trajectory and point cloud map on NTU4DRadLM'
+  summary: 'Using range and Doppler velocity to establish correspondences in a single pass for 4D scan matching.'
+  summary_ko: '거리와 Doppler 속도로 대응점을 찾는 비반복 스캔 정합.'
+- title: 'Semantic-GSL: Semantically Guided Gas Source Localization With Vision-Language Models'
+  short_title: 'Semantic-GSL: Semantically Guided Gas Source Localization'
+  url: /research/semantic-gsl/
+  venue: RA-L 2026
+  image: /assets/img/papers/semantic-overview.png
+  alt: 'Semantic-GSL framework combining visual object detection, semantic filtering, and gas measurements'
+  summary: 'Connecting visual semantic context with probabilistic gas source estimation and information-driven search.'
+  summary_ko: '시각·언어 단서와 가스 측정을 결합하는 의미 기반 가스원 탐색.'
+- title: Self-supervised Geometry Reasoning for LiDAR Simultaneous Localization and Mapping
+  short_title: Self-supervised Geometry Reasoning for LiDAR SLAM
+  url: /research/geometry-reasoning-slam/
+  venue: RSS Workshop 2026
+  image: /assets/img/papers/slam-overview.png
+  alt: 'Reciprocal learning framework connecting neural covariance estimation, geometric reasoning, and LiDAR SLAM'
+  summary: 'A reciprocal learning loop in which better geometry improves SLAM, and SLAM provides supervision for geometry.'
+  summary_ko: '기하 학습과 SLAM이 서로를 개선하는 자기지도 학습 루프.'

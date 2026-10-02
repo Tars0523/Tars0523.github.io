@@ -1,0 +1,20 @@
+---
+layout: research-home
+---
+<article class="publication detail">
+  <a class="back-link" href="{{ '/#research' | relative_url }}">← Research</a>
+  <header class="detail-header">
+    <p class="paper-venue">{{ page.venue }}</p>
+    {% if page.award %}<a class="award-badge detail-award" href="{{ page.award_url }}"><span aria-hidden="true">✦</span> {{ page.award }} ↗</a>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.description }}</p>
+    <p class="paper-authors">{{ page.authors }}</p>
+    {% if page.equal_contribution %}<p class="paper-contribution">* Equal contribution · 공동 제1저자</p>{% endif %}
+    <div class="paper-links"><a href="{{ page.paper_url }}">{{ page.paper_label | default: "Paper" }} ↗</a>{% if page.pdf_url %}<a href="{{ page.pdf_url }}">{{ page.pdf_label | default: "PDF" }} ↗</a>{% endif %}{% if page.code_url %}<a href="{{ page.code_url }}">Code ↗</a>{% endif %}</div>
+  </header>
+  {% if page.version_note %}<p class="version-note">{{ page.version_note }}</p>{% endif %}
+  <nav class="language-nav" aria-label="Summary language"><a href="#korean" lang="ko">한국어 요약 ↓</a><a href="#english" lang="en">English summary ↓</a><a href="#figures">Figures ↓</a></nav>
+  <figure class="paper-figure paper-hero"><a href="{{ page.image | relative_url }}" aria-label="Open full-size representative figure"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="{{ page.image_width }}" height="{{ page.image_height }}"></a><figcaption>{{ page.caption }} <a href="{{ page.figure_source_url | default: page.paper_url }}">Source: {{ page.figure_source }}</a></figcaption></figure>
+  <div class="prose publication-prose">{{ content }}</div>
+  <nav class="detail-next" aria-label="Research navigation"><a href="{{ '/#research' | relative_url }}">← All research</a><a href="{{ page.next_url | relative_url }}">{{ page.next_title }} ↗</a></nav>
+</article>

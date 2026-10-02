@@ -1,0 +1,10 @@
+<aside class="gnc-series-nav" aria-label="GNC series">
+<p>Graduated Non-Convexity · Series</p>
+<ol>
+{% assign series = site.posts | where_exp: 'post', 'post.series_order != nil' | sort: 'series_order' %}
+{% for item in series %}
+<li>{% if item.url == page.url %}<strong aria-current="page">{{ item.title }}</strong>{% else %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}</li>
+{% endfor %}
+</ol>
+<a href="{{ '/reviews/graduated-non-convexity/' | relative_url }}">← Graduated Non-Convexity review</a>
+</aside>

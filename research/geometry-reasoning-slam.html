@@ -1,0 +1,41 @@
+---
+layout: publication
+title: Self-supervised Geometry Reasoning for LiDAR Simultaneous Localization and Mapping
+permalink: /research/geometry-reasoning-slam/
+venue: RSS Workshop 2026
+description: A reciprocal loop between learned geometry and LiDAR SLAM.
+authors: 'Jiwoo Kim*, Jinwoo Lee*, Woojae Shin, Giseop Kim, Hyondong Oh'
+equal_contribution: true
+paper_url: https://arxiv.org/abs/2606.30166
+pdf_url: https://arxiv.org/pdf/2606.30166
+code_url: https://github.com/jinwoolee1230/POLI
+image: /assets/img/papers/slam-overview.png
+image_alt: 'Figure 1 connects a neural geometry module, likelihood-based reasoning, shared memory, and LiDAR SLAM'
+image_width: 1188
+image_height: 696
+caption: '기하 추론과 SLAM이 서로 개선되는 자기지도 학습 루프. / A reciprocal loop between geometry reasoning and SLAM.'
+figure_source: 'Kim, Lee et al., Fig. 1'
+next_url: /research/poli/
+next_title: Point Cloud Geometry · POLI
+---
+<section id="korean" lang="ko">
+<h2>한국어 요약</h2>
+<h3>기하와 위치 추정을 함께 개선하기</h3>
+<p>희소하거나 저해상도인 점군에서는 수작업 통계로 구한 국소 기하가 불안정할 수 있습니다. 이 연구는 점별 Gaussian 공분산으로 기하를 표현하고, <strong>SLAM이 추정한 대응점과 궤적을 학습 신호로 활용</strong>합니다. 조밀한 기하 라벨이나 ground-truth 자세 없이 학습하는 것이 핵심입니다.</p>
+<h3>상호 개선 루프</h3>
+<p>신경망이 예측한 공분산으로 점군을 증강해 SLAM에 전달합니다. 갱신된 대응점과 궤적은 메모리에 저장되고, likelihood 기반 기하 학습에 다시 사용됩니다. 이렇게 기하 추론과 SLAM을 번갈아 수행하며 추정 결과를 개선합니다.</p>
+<h3>평가</h3>
+<p>KITTI에서 LiDAR 해상도를 달리하며 odometry와 전역 정합을 평가합니다. Table I의 16채널 조건에서 300프레임 구간의 병진 RPE는 Raw의 15.55 m에서 2-step의 7.85 m로 감소합니다. 전역 정합에서는 반복 횟수가 늘어난다고 항상 더 좋아지는 것은 아니며, 학습 시간과 초기 추정 품질도 고려해야 합니다.</p>
+</section>
+<section id="english" lang="en">
+<h2>English summary</h2>
+<p>This framework learns local Gaussian geometry using correspondences and trajectories estimated by SLAM, without dense geometry labels or ground-truth poses. Predicted covariances support scan densification; the resulting scans improve SLAM, whose updated estimates provide supervision for another geometry-learning step.</p>
+<p>Experiments vary LiDAR resolution on KITTI. In the 16-channel setting, translational RPE over 300-frame intervals decreases from 15.55 m for raw scans to 7.85 m after two steps. Registration gains are not strictly monotonic with additional rounds, and training introduces computational overhead.</p>
+<p>Presented at the RSS 2026 workshop <em>From Perception to Action: Representation-Centric Robot Autonomy</em>.</p>
+</section>
+<section id="figures">
+<h2>Inside the paper · 주요 Figure</h2>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/slam-results.png' | relative_url }}"><img src="{{ '/assets/img/papers/slam-results.png' | relative_url }}" alt="Figure 5a plots relative pose error over geometry-learning epochs" loading="lazy"></a><figcaption><span lang="ko"><strong>Fig. 5(a) — 학습에 따른 odometry 변화.</strong> 학습 epoch에 따른 상대 자세 오차를 비교합니다.</span><span lang="en">Relative pose error across geometry-learning epochs.</span><a href="https://arxiv.org/abs/2606.30166">Source: Kim, Lee et al., Fig. 5(a)</a></figcaption></figure>
+<figure class="paper-figure"><a href="{{ '/assets/img/papers/slam-trajectory.png' | relative_url }}"><img src="{{ '/assets/img/papers/slam-trajectory.png' | relative_url }}" alt="Figure 5b compares estimated trajectories at different training epochs" loading="lazy"></a><figcaption><span lang="ko"><strong>Fig. 5(b) — 궤적 비교.</strong> 학습 단계별 추정 궤적의 변화를 보여줍니다.</span><span lang="en">Trajectory estimates at different training epochs.</span><a href="https://arxiv.org/abs/2606.30166">Source: Kim, Lee et al., Fig. 5(b)</a></figcaption></figure>
+</section>
+<p class="paper-source">Summary and figures: <a href="https://arxiv.org/abs/2606.30166">Kim, Lee et al., Self-supervised Geometry Reasoning for LiDAR Simultaneous Localization and Mapping</a>, RSS Workshop 2026, arXiv v1. Original figure numbering retained. 그림을 클릭하면 원본 크기로 볼 수 있습니다.</p>

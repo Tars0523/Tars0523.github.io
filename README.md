@@ -73,9 +73,8 @@ data; they do not represent experimental results. Regenerate them with
 
 ## CV
 
-The homepage has a CV section and a shared navigation link to `/#cv`.
-`assets/files/Jiwoo_Kim_CV.pdf` is the supplied CV, with open and download links.
-To update it, replace that PDF and update the date and page count in `index.html`.
+The shared top navigation links directly to `assets/files/Jiwoo_Kim_CV.pdf`,
+opening the supplied CV in a new tab. To update it, replace that PDF.
 
 ## Homepage walkthrough
 

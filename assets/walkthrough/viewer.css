@@ -4,3 +4,5 @@
 
 /* Keep the homepage preview dense; optional controls expand on demand. */
 h2{min-height:24px;margin-bottom:5px;font-size:11px}.viewport{height:180px}.views{gap:10px}.transport{gap:8px;margin-top:7px}button{padding:3px 9px}.caption{margin-top:7px;font-size:10px}.map-tools{margin-top:6px}.map-tools summary{cursor:pointer;color:#087a70;font-size:11px;list-style-position:inside}.map-hint{margin:5px 0}.map-actions{gap:6px}#view-status:empty{display:none}#view-status{min-height:0;margin-top:3px}@media(max-width:420px){.viewport{height:170px}h2{font-size:10px}.caption{font-size:9px}}
+
+.reconstruction-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:3px 12px;margin:0 0 3px}.reconstruction-heading h1{font-size:14px;font-weight:600;line-height:1.4;margin:0;color:#142a36}.reconstruction-heading p{font-size:10px;line-height:1.4;margin:0;color:#576972}

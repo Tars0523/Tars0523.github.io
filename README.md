@@ -86,7 +86,7 @@ chunks (600,000 points, 9 MB); the first 100,000 points provide a quick preview.
 `viewer.js` preserves the source viewer's pose interpolation and WebGL renderer.
 Autoplay respects reduced-motion preferences. `assets/js/intro-walkthrough.js`
 suspends playback when the embed leaves the viewport; hidden tabs also pause.
-Point Scale defaults to 1. Drag the map to rotate, Shift/right-drag to pan, and
+Point Scale defaults to 3 px. Drag the map to rotate, Shift/right-drag to pan, and
 scroll to zoom. Save angle stores the view in this browser only; Reset view
 clears that saved view and restores the default camera framing.
 

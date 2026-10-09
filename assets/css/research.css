@@ -16,3 +16,6 @@
 .paper-venue{font-family:Manrope,'Noto Sans KR',sans-serif;font-size:17px;font-weight:500;line-height:1.5;letter-spacing:-.025em;color:var(--muted);margin-bottom:20px}
 
 .intro.intro-minimal{display:block;padding:64px 0 60px}.intro-minimal .affiliation{margin-bottom:0}@media(max-width:700px){.intro.intro-minimal{padding:42px 0}}
+
+/* Live map and camera preview beside the homepage introduction. */
+.intro.intro-walkthrough{grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);align-items:center;gap:40px;padding:48px 0}.intro-walkthrough h1{font-size:clamp(48px,5.5vw,72px)}.intro-walkthrough .eyebrow{font-size:10px;letter-spacing:.1em}.intro-walkthrough .affiliation{margin-bottom:0}.intro-viewer{min-width:0}.intro-viewer iframe{display:block;width:100%;height:440px;border:0;background:#fff}@media(max-width:1000px){.intro.intro-walkthrough{gap:24px}.intro-walkthrough h1{font-size:52px}}@media(max-width:800px){.intro.intro-walkthrough{grid-template-columns:1fr;gap:24px;padding:38px 0}.intro-walkthrough h1{font-size:62px}.intro-viewer iframe{height:440px}}@media(max-width:464px){.intro-viewer iframe{height:430px}}

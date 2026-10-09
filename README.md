@@ -72,6 +72,23 @@ data; they do not represent experimental results. Regenerate them with
 `python3 tools/generate-covers.py` (requires NumPy and Matplotlib). No CV PDF or
 personal contact details were copied into the public site.
 
+## Homepage walkthrough
+
+The introduction embeds `assets/walkthrough/index.html`, a compact adaptation of
+the [SafeVGGT walkthrough](https://safevggt-walkthrough-tars0523.alert-skink-7637.chatgpt.site/).
+It displays the map/trajectory and camera RGB point-cloud reprojection together,
+with autoplay, looping, pause, and scrubbing. This is a synthetic point-cloud
+view, not the original camera images. The original viewer remains linked.
+
+The local data retains all 324 camera poses and the first two original point
+chunks (600,000 points, 9 MB); the first 100,000 points provide a quick preview.
+`viewer.js` preserves the source viewer's pose interpolation and WebGL renderer.
+Autoplay respects reduced-motion preferences. `assets/js/intro-walkthrough.js`
+suspends playback when the embed leaves the viewport; hidden tabs also pause.
+Point Scale defaults to 1. Drag the map to rotate, Shift/right-drag to pan, and
+scroll to zoom. Save angle stores the view in this browser only; Reset view
+clears that saved view and restores the default camera framing.
+
 ## Research publications
 
 Edit `_data/publications.yml` for publication cards. Bilingual summaries and paper

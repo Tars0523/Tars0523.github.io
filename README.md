@@ -69,8 +69,13 @@ homepage. Post metadata and the GNC chapter descriptions are in `_posts/`.
 
 The six cover images are original conceptual diagrams generated from synthetic
 data; they do not represent experimental results. Regenerate them with
-`python3 tools/generate-covers.py` (requires NumPy and Matplotlib). No CV PDF or
-personal contact details were copied into the public site.
+`python3 tools/generate-covers.py` (requires NumPy and Matplotlib).
+
+## CV
+
+The homepage has a CV section and a shared navigation link to `/#cv`.
+`assets/files/Jiwoo_Kim_CV.pdf` is the supplied CV, with open and download links.
+To update it, replace that PDF and update the date and page count in `index.html`.
 
 ## Homepage walkthrough
 

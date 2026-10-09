@@ -101,3 +101,10 @@ Publication card venue labels and optional award badges are configured in
 `_data/publications.yml`. Doppler uses the official RSS Outstanding Student Paper
 Award Finalist designation. Semantic-GSL distinguishes its RA-L 2026 journal
 record from the public workshop version used for figures and summary.
+
+## Page freshness
+
+PWA page caching is disabled. The retiring service worker and
+`assets/js/retire-page-cache.js` remove only legacy `chirpy-` caches so returning
+readers receive the updated homepage. Keep the worker at its original
+`/sw.min.js` URL for browsers with an older installation.

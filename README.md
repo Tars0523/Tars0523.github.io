@@ -61,7 +61,7 @@ Deployment is handled by `.github/workflows/pages-deploy.yml` on pushes to `main
 ## Editing the homepage
 
 The homepage introduces Jiwoo Kim, followed by Research and Paper & Theory
-Reviews. Four publication cards link to bilingual research pages. GNC appears as
+Reviews. Four compact publication rows pair thumbnails with bilingual summaries and detail links. GNC appears as
 one review card linking to `reviews/graduated-non-convexity.html`, which lists the
 three existing posts in `series_order`. The original post URLs remain unchanged.
 Research-interest pages remain reachable from About, but are not listed on the
@@ -77,7 +77,8 @@ personal contact details were copied into the public site.
 The introduction embeds `assets/walkthrough/index.html`, a compact adaptation of
 the [SafeVGGT walkthrough](https://safevggt-walkthrough-tars0523.alert-skink-7637.chatgpt.site/).
 It displays the map/trajectory and camera RGB point-cloud reprojection together,
-with autoplay, looping, pause, and scrubbing. This is a synthetic point-cloud
+with autoplay, looping, pause, and scrubbing. Map controls expand on demand,
+and the iframe follows its content height to avoid empty space. This is a synthetic point-cloud
 view, not the original camera images. The original viewer remains linked.
 
 The local data retains all 324 camera poses and the first two original point

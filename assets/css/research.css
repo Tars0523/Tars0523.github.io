@@ -17,5 +17,109 @@
 
 .intro.intro-minimal{display:block;padding:64px 0 60px}.intro-minimal .affiliation{margin-bottom:0}@media(max-width:700px){.intro.intro-minimal{padding:42px 0}}
 
-/* Live map and camera preview beside the homepage introduction. */
-.intro.intro-walkthrough{grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);align-items:center;gap:40px;padding:48px 0}.intro-walkthrough h1{font-size:clamp(48px,5.5vw,72px)}.intro-walkthrough .eyebrow{font-size:10px;letter-spacing:.1em}.intro-walkthrough .affiliation{margin-bottom:0}.intro-viewer{min-width:0}.intro-viewer iframe{display:block;width:100%;height:440px;border:0;background:#fff}@media(max-width:1000px){.intro.intro-walkthrough{gap:24px}.intro-walkthrough h1{font-size:52px}}@media(max-width:800px){.intro.intro-walkthrough{grid-template-columns:1fr;gap:24px;padding:38px 0}.intro-walkthrough h1{font-size:62px}.intro-viewer iframe{height:440px}}@media(max-width:464px){.intro-viewer iframe{height:430px}}
+/* Compact research layout: thumbnails sit directly beside their descriptions. */
+.wrap { max-width:1120px; padding-inline:24px; }
+.site-header { min-height:58px; gap:20px; }
+.wordmark { font-size:21px; }
+nav { gap:22px; font-size:13px; }
+.intro.intro-walkthrough {
+  grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);
+  align-items:center; gap:24px; padding:18px 0;
+}
+.intro-walkthrough h1 { font-size:44px; margin-bottom:10px; }
+.intro-walkthrough .eyebrow { font-size:10px; letter-spacing:.08em; margin-bottom:12px; }
+.intro-walkthrough .affiliation { font-size:14px; margin-bottom:10px; }
+.intro-bio { max-width:300px; font-size:14px; line-height:1.5; color:var(--muted); margin:0; }
+.intro-viewer { min-width:0; }
+.intro-viewer iframe { display:block; width:100%; height:300px; border:0; background:#fff; }
+.section { padding:24px 0 0; }
+.section-heading { align-items:baseline; gap:12px; margin-bottom:12px; }
+.section-heading h2 { font-size:24px; font-weight:600; }
+.section-heading > p { font-size:12px; line-height:1.4; }
+.publication-grid { grid-template-columns:1fr; gap:0; }
+.publication-card { padding:14px 0; border-top:1px solid var(--line); }
+.publication-card .card-link { display:grid; grid-template-columns:190px minmax(0,1fr); gap:18px; align-items:center; }
+.publication-card .card-image { aspect-ratio:19/12; padding:4px; border:0; background:#fff; box-shadow:none; }
+.publication-card .card-image img { object-fit:contain; }
+.publication-copy { min-width:0; }
+.publication-meta { justify-content:flex-start; align-items:center; gap:10px; margin:0 0 4px; }
+.venue-badge { font-size:12px; font-weight:600; }
+.publication-meta .award-badge { margin:0; padding:2px 6px; font-size:10px; color:#a52a35; }
+.publication-card h3 { max-width:none; font-size:18px; line-height:1.35; letter-spacing:-.02em; margin:0 0 5px; }
+.publication-card p { font-size:14px; line-height:1.5; margin:0 0 6px; }
+.card-korean { font-size:12px; line-height:1.5; margin-top:3px; }
+.publication-card .read-link { display:inline; font-size:12px; padding:0; border:0; }
+.review-card { border:0; border-top:1px solid var(--line); padding:14px 0 0; }
+.review-card .card-link { grid-template-columns:190px minmax(0,1fr); gap:18px; }
+.review-card .card-image { min-height:0; height:auto; padding:0; }
+.review-card .image-arrow { display:none; }
+.review-card-copy { padding:0; border:0; }
+.review-card-copy .card-meta { font-size:10px; margin:0 0 4px; justify-content:flex-start; gap:12px; }
+.review-card h3 { font-size:20px; margin:0 0 5px; }
+.review-card p { font-size:14px; line-height:1.5; margin:0 0 5px; }
+.review-card .review-reference { font-size:12px; margin-bottom:5px; }
+.review-card .read-link { font-size:12px; }
+.review-image-credit { margin:8px 0 0; font-size:10px; }
+.site-footer { margin-top:28px; min-height:60px; font-size:12px; padding-block:14px; }
+/* Bring article headings, figures, and bilingual summaries closer together. */
+.detail { margin-top:24px; max-width:900px; }
+.detail-header { margin-top:18px; }
+.detail h1, .publication h1 { font-size:clamp(28px,3.4vw,38px); line-height:1.2; margin-bottom:12px; }
+.detail .lead { font-size:17px; margin-bottom:10px; }
+.detail-header .eyebrow, .paper-venue { margin-bottom:8px; }
+.paper-authors { font-size:14px; line-height:1.5; }
+.paper-contribution { font-size:12px; margin-bottom:8px; }
+.paper-links { gap:8px; margin:12px 0 16px; }
+.paper-links a { padding:6px 12px; font-size:12px; }
+.language-nav { padding:10px 0; gap:18px; font-size:12px; }
+.paper-figure { margin:18px 0; }
+.paper-figure img { padding:5px; }
+.publication .paper-hero img { max-height:420px; }
+.paper-figure figcaption { font-size:12px; line-height:1.5; margin-top:6px; }
+.prose, .publication-prose { max-width:850px; font-size:15px; line-height:1.65; }
+.prose p { line-height:1.65; margin-bottom:12px; }
+.prose h2 { font-size:23px; margin:24px 0 10px; }
+.publication-prose > section { margin-top:24px; }
+.publication-prose h3 { font-size:18px; margin:16px 0 7px; }
+.prose li { margin-bottom:6px; }
+.version-note { padding:10px 14px; margin:14px 0; font-size:12px; line-height:1.6; }
+.detail-cover { margin:18px 0 8px; }
+.caption { margin-bottom:18px; }
+.detail-next { margin-top:24px; padding-top:14px; font-size:13px; }
+.review-chapters { margin:18px 0; }
+.review-chapters a { gap:14px; padding:16px 4px; }
+.review-chapters h2 { font-size:20px; margin-bottom:6px; }
+.review-chapters p:last-child { font-size:14px; }
+@media(max-width:800px) {
+  .wrap { padding-inline:20px; }
+  .intro.intro-walkthrough { grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr); gap:18px; }
+  .intro-walkthrough h1 { font-size:36px; }
+  .intro-walkthrough .eyebrow { font-size:9px; }
+  .section-heading { flex-direction:row; align-items:baseline; }
+  .publication-card .card-link, .review-card .card-link { grid-template-columns:155px minmax(0,1fr); gap:14px; }
+}
+@media(max-width:600px) {
+  .wrap { padding-inline:16px; }
+  .site-header { min-height:56px; flex-direction:row; align-items:center; justify-content:space-between; padding-block:10px; gap:12px; }
+  .wordmark { font-size:18px; }
+  .site-header nav { gap:12px; font-size:11px; }
+  .intro.intro-walkthrough { grid-template-columns:1fr; gap:14px; padding:18px 0 12px; }
+  .intro-walkthrough h1 { font-size:36px; margin-bottom:6px; }
+  .intro-walkthrough .eyebrow { margin-bottom:6px; }
+  .intro-walkthrough .affiliation { margin-bottom:6px; }
+  .intro-bio { max-width:none; font-size:13px; }
+  .section { padding-top:20px; }
+  .section-heading { flex-direction:column; gap:4px; margin-bottom:10px; }
+  .section-heading h2 { font-size:22px; }
+  .publication-card { padding:12px 0; }
+  .publication-card .card-link, .review-card .card-link { grid-template-columns:110px minmax(0,1fr); gap:12px; align-items:start; }
+  .publication-card .card-image { aspect-ratio:1; padding:0; }
+  .publication-card h3, .review-card h3 { font-size:16px; }
+  .publication-card p, .review-card p { font-size:13px; }
+  .publication-meta { gap:4px; }
+  .publication-meta .award-badge { font-size:9px; }
+  .review-card .card-image { margin-top:6px; }
+  .site-footer { align-items:start; flex-direction:column; gap:6px; min-height:0; }
+  .detail h1, .publication h1 { font-size:28px; }
+  .paper-panels { grid-template-columns:1fr; }
+}

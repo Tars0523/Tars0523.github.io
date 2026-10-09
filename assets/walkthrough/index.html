@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SafeVGGT · Map and camera walkthrough</title><link rel="stylesheet" href="viewer.css"><script src="viewer.js" defer></script></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SafeVGGT · Map and camera walkthrough</title><link rel="stylesheet" href="viewer.css"><script src="viewer.js" defer></script><script src="embed-size.js" defer></script></head><body>
 <main>
   <p id="error" role="alert" hidden></p>
   <div class="views">
@@ -14,11 +14,11 @@
 
     </section>
   </div>
-  <div class="map-tools" aria-label="Interactive map controls">
+  <details class="map-tools"><summary>Map controls</summary>
     <p class="map-hint">Drag: rotate · Shift / right-drag: pan · Scroll: zoom</p>
     <div class="map-actions"><button id="fit" type="button">Reset view</button><button id="save-view" type="button">Save angle</button><label>Point Scale <input id="size" type="range" min="1" max="8" step="1" value="1"><output id="size-label" for="size">1 px</output></label></div>
     <span id="view-status" role="status" aria-live="polite"></span>
-  </div>
+  </details>
   <div class="transport" aria-label="Trajectory playback">
     <button id="play" type="button" aria-pressed="false">Play</button>
     <button hidden id="prev" type="button" aria-label="Previous keyframe">Previous</button>
